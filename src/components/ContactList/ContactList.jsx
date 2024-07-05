@@ -1,10 +1,11 @@
 import Contact from "../Contact/Contact";
 
-export default function ContactList() {
+export default function ContactList({ contacts }) {
   return (
-    <div>
-      <h1>Phonebook&&&&&&&&&&&&&&</h1>
-      <Contact />
-    </div>
+    <ul>
+      {contacts.map((contact) => (
+        <Contact key={contact.id} contact={contact} />
+      ))}
+    </ul>
   );
 }

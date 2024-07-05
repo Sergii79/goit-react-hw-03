@@ -1,7 +1,12 @@
-export default function Contact() {
+import css from "../Contact/Contact.module.css";
+
+export default function Contact({ contact }) {
   return (
-    <div>
-      <h1>Phonebook***************</h1>
-    </div>
+    <li className={css.list}>
+      <p>
+        {contact.name}: {contact.number}
+      </p>
+      <button>Delete</button>
+    </li>
   );
 }
