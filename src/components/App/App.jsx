@@ -4,6 +4,7 @@ import "../App/GlobalStyle.css";
 import ContactForm from "../ContactForm/ContactForm";
 import SearchBox from "../SearchBox/SearchBox";
 import ContactList from "../ContactList/ContactList";
+import { nanoid } from "nanoid";
 
 export default function App() {
   const [contacts, setContacts] = useState([
