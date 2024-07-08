@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "../ContactForm/ContactForm.module.css";
 
-const validationSchema = Yup.object().shape({
+const validationChoice = Yup.object().shape({
   name: Yup.string()
     .min(3, "Name must be at least 3 characters")
     .max(50, "Name must be at most 50 characters")
@@ -17,7 +17,7 @@ export default function ContactForm({ onAddContact }) {
   return (
     <Formik
       initialValues={{ name: "", number: "" }}
-      validationSchema={validationSchema}
+      validationSchema={validationChoice}
       validateOnBlur={true}
       validateOnChange={false}
       onSubmit={(values, { resetForm }) => {
@@ -47,7 +47,9 @@ export default function ContactForm({ onAddContact }) {
             />
           </label>
           <br />
-          <button type="submit">Add Contact</button>
+          <button className={css.button} type="submit">
+            Add contact
+          </button>
         </Form>
       )}
     </Formik>
