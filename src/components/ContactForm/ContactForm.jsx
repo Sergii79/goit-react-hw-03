@@ -26,10 +26,10 @@ export default function ContactForm({ onAddContact }) {
       }}
     >
       {() => (
-        <Form>
-          <label>
-            Name:
-            <Field type="text" name="name" />
+        <Form className={css.container}>
+          <label className={css.label}>
+            Name
+            <Field type="text" name="name" className={css.input} />
             <ErrorMessage
               name="name"
               component="div"
@@ -37,9 +37,9 @@ export default function ContactForm({ onAddContact }) {
             />
           </label>
           <br />
-          <label>
-            Number:
-            <Field type="text" name="number" />
+          <label className={css.label}>
+            Number
+            <Field type="text" name="number" className={css.input} />
             <ErrorMessage
               name="number"
               component="div"
